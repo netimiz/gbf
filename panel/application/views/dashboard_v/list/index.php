@@ -26,7 +26,7 @@
             <div class="row row-deck row-cards">
 
               <!-- Footer -->
-              <?php $this->load->view("dashboard_v/content"); ?>
+              <?php $this->load->view("{$viewFolder}/{$subViewFolder}/content"); ?>
 
 
             </div>

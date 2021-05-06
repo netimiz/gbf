@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Dosyalar extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -11,17 +11,18 @@ class Dashboard extends CI_Controller {
  public function __construct()
  {
 		parent::__construct();
-		$this->viewFolder="dashboard_v";
+		$this->viewFolder="dosyalar_v";
 	}
 
 
 	public function index()
 	{
-		$viewData = new stdClass();
-		$viewData->viewFolder =$this->viewFolder;
-		$viewData->subViewFolder= "list";
+    $viewData = new stdClass();
+    $viewData->viewFolder =$this->viewFolder;
+    $viewData->subViewFolder= "list";
 
 		$this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
+
 	}
 
 
