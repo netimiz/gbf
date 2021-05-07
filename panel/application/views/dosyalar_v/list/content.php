@@ -74,7 +74,10 @@
               </div>
             </th>
 
-            <th>İşlem</th>
+            <th class="text-end">
+              
+
+            </th>
           </tr>
         </thead>
         <tbody>

@@ -18,14 +18,18 @@
 
       <div class="page-wrapper">
 
+
         <!-- Navbar -->
-        <?php $this->load->view("includes/navbar"); ?>
+        <?php $this->load->view("{$viewFolder}/{$subViewFolder}/navbar"); ?>
 
         <div class="page-body">
           <div class="container-xl">
             <div class="row row-deck row-cards">
 
-              <!-- Footer -->
+              <!-- Ozet -->
+              <?php $this->load->view("{$viewFolder}/{$subViewFolder}/ozet"); ?>
+
+              <!-- Icerik -->
               <?php $this->load->view("{$viewFolder}/{$subViewFolder}/content"); ?>
 
 
@@ -33,7 +37,7 @@
           </div>
         </div>
         <!-- Footer -->
-        <?php $this->load->view("includes/dialog"); ?>
+        <?php $this->load->view("includes/footer"); ?>
       </div>
     </div>
 
