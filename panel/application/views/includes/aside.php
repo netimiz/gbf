@@ -73,6 +73,33 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="false" >
+            <span class="nav-link-icon d-md-none d-lg-inline-block">
+
+              <!-- Download SVG icon from http://tabler-icons.io/i/building-bank -->
+              	<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="3" y1="21" x2="21" y2="21" /><line x1="3" y1="10" x2="21" y2="10" /><polyline points="5 6 12 3 19 6" /><line x1="4" y1="10" x2="4" y2="21" /><line x1="20" y1="10" x2="20" y2="21" /><line x1="8" y1="14" x2="8" y2="17" /><line x1="12" y1="14" x2="12" y2="17" /><line x1="16" y1="14" x2="16" y2="17" /></svg>
+
+            </span>
+            <span class="nav-link-title">
+              Firmalar
+            </span>
+          </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-menu-columns">
+              <div class="dropdown-menu-column">
+                <a class="dropdown-item" href="<?php echo base_url("firma"); ?>" >
+                  Listele
+                </a>
+                <a class="dropdown-item" href="./accordion.html" >
+                  Ekle
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="false" >
             <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
               <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" /><line x1="12" y1="12" x2="20" y2="7.5" /><line x1="12" y1="12" x2="12" y2="21" /><line x1="12" y1="12" x2="4" y2="7.5" /><line x1="16" y1="5.25" x2="8" y2="9.75" /></svg>
             </span>
@@ -180,6 +207,7 @@
             </div>
           </div>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="./form-elements.html" >
             <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
