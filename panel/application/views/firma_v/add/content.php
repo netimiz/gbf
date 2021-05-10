@@ -20,8 +20,16 @@ dosya yükleme
         <!--Form elemanları-->
         <form action="<?php echo base_url("firma/save"); ?>" method="post">
             <div class="mb-3">
-              <label class="form-label">Firma Adı</label>
-              <input type="text" class="form-control" name="title" placeholder="Firma Adı">
+              <label class="form-label">Firma Adı
+                <?php if(isset($form_error)){  ?>
+                  <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true" data-bs-content="<p>
+                    <?php echo form_error("title"); ?></p>">?
+                  </span>
+                <?php } ?>
+              </label>
+              <input type="text" class="form-control <?php if(isset($form_error)){ echo "is-invalid is-invalid-lite";} ?>"
+                name="title" placeholder="Firma Adı">
+
             </div>
 
 

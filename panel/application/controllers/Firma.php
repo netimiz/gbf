@@ -65,9 +65,34 @@ class Firma extends CI_Controller {
     // form validateon calıştırılıreq
     $validate=$this->form_validation->run();
     if($validate){
-      echo "kayıt işlemi başlar";
+      // kayıt işlemi başlar
+      $insert=$this->firma_model->add(
+              array(
+                "title" =>$this->input->post("title"),
+                "url" =>"test",
+                "isActive" =>1
+                //"createdAt" =>date("d-m-Y H:i:s"),
+              )
+        );
+
+      if($insert)
+      {
+        echo "kayıt eklendi";
+      }else{
+        echo "kayıt nay nayda nay";
+      }
+
     }else{
-      echo validation_errors();
+      //echo validation_errors();
+      $viewData = new stdClass();
+      /** viewe gönderilecek dataların set edilmesi */
+      $viewData->viewFolder=$this->viewFolder;
+      $viewData->subViewFolder= "add";
+
+      $viewData->form_error =true;
+
+      $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
+
     }
 
 
