@@ -1,19 +1,9 @@
-<!-- TODO Lists
-Hazırlanma Tarih mask
-Revizyon Tarih mask
-Tür için veritabanından id ve açıklama çekme
-üye bilgisi Ekleme -oto-
-kayıt tarihi ekleme -oto-
-firma ajax arama - id alma
-dosya yükleme
- -->
-
 <div class="col-sm-6 col-lg-6">
   <div class="card">
     <div class="card-body">
 
         <!--Form elemanları-->
-        <form action="<?php echo base_url("firma/save"); ?>" method="post">
+        <form action="<?php echo base_url("firma/update/$item->id"); ?>" method="post">
             <div class="mb-3">
               <label class="form-label">Firma Adı
                   <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
@@ -22,7 +12,7 @@ dosya yükleme
               </label>
 
               <input type="text" class="form-control <?php if(isset($form_error)){ echo "is-invalid ";} ?>"
-                name="title" placeholder="Firma Adı">
+                name="title" placeholder="Firma Adı" value="<?php echo $item->title; ?>">
                 <?php if(isset($form_error)){  ?>
                   <div class="invalid-feedback"><?php echo form_error("title"); ?></div>
                 <?php } ?>
@@ -41,7 +31,7 @@ dosya yükleme
                 </svg>
                 İptal
               </a>
-            <button type="submit" class="btn btn-primary" >
+            <button type="submit" class="btn btn-warning" >
               <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
               <!-- SVG icon code -->
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -49,7 +39,7 @@ dosya yükleme
                  <line x1="12" y1="5" x2="12" y2="19"></line>
                  <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
-              Firma Ekle
+              Firmayı Güncelle
             </button>
             </div>
 

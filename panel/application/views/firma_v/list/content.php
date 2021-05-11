@@ -78,11 +78,11 @@
               <span class="dropdown">
                 <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">İşlem</button>
                 <div class="dropdown-menu dropdown-menu-end">
-                  <a class="dropdown-item" href="#">
-                    Action
+                  <a class="dropdown-item" href="<?php echo base_url("firma/update_form/$item->id"); ?>">
+                    Güncelle
                   </a>
                   <a class="dropdown-item" href="#">
-                    Another action
+                    Sil
                   </a>
                 </div>
               </span>
