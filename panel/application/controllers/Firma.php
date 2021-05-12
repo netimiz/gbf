@@ -184,4 +184,21 @@ class Firma extends CI_Controller {
 
   }
 
+  public function delete($id){
+    $delete = $this->firma_model->delete(
+        array(
+          "id" => $id
+        )
+    );
+
+    // TODO alert sistemei
+    if($delete){
+      redirect(base_url("firma"));
+    }else{
+      redirect(base_url("firma"));
+    }
+    
+  }
+
+
 }

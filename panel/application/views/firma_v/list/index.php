@@ -41,8 +41,9 @@
       </div>
     </div>
 
-    <!-- Üst hızlı dialog -->
-<?php $this->load->view("includes/dialog"); ?>
+    <!-- Üst hızlı moal dialog -->
+<?php //$this->load->view("includes/dialog"); ?>
+<?php $this->load->view("{$viewFolder}/{$subViewFolder}/modals"); ?>
 
 <!-- Libs JS and Core -->
 <?php $this->load->view("includes/include_script"); ?>

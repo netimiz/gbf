@@ -89,7 +89,7 @@
                 <a class="dropdown-item" href="<?php echo base_url("firma"); ?>" >
                   Listele
                 </a>
-                <a class="dropdown-item" href="./accordion.html" >
+                <a class="dropdown-item" href="<?php echo base_url("firma/new_form"); ?>" >
                   Ekle
                 </a>
 

@@ -10,4 +10,17 @@
 <script src="<?php echo base_url("assets/ui_assets"); ?>/dist/js/tooltip.js"> </script>
 <!-- Tabler Core -->
 <script src="<?php echo base_url("assets/ui_assets"); ?>/dist/js/tabler.min.js"></script>
-//revenue kısmı
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+// modal ile silme işlemi için linki gönderiyor. (firma Silmede Kullanılıyor.)
+$('#silOnay').on('show.bs.modal', function (event) {
+  var id = $(event.relatedTarget).data('href')
+  //id : hem id hem adresi alıyor
+  var href = '' + id
+  $('.btn-danger', this).attr('href', href)
+
+})
+</script>
