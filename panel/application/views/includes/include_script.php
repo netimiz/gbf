@@ -21,6 +21,19 @@ $('#silOnay').on('show.bs.modal', function (event) {
   //id : hem id hem adresi alıyor
   var href = '' + id
   $('.btn-danger', this).attr('href', href)
-
 })
+
+//isActive olayı
+$(".isActive").change(function(){
+  var $data= $(this).prop("checked");
+  var $data_url= $(this).data("url");
+
+  if(typeof $data !== "undefined" && typeof $data_url !== "undefined"){
+    $.post($data_url, { data :$data }, function(response){
+    });
+  }
+})
+
+
+
 </script>

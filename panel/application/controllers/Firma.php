@@ -23,7 +23,10 @@ class Firma extends CI_Controller {
 
 
     /** tablodan verilerin getirilmesi*/
-    $items = $this->firma_model->get_all();
+    $items = $this->firma_model->get_all(
+      array(),
+      "id DESC"
+    );
 
     /** viewe gönderilecek dataların set edilmesi */
     $viewData->viewFolder =$this->viewFolder;
@@ -197,8 +200,26 @@ class Firma extends CI_Controller {
     }else{
       redirect(base_url("firma"));
     }
-    
+
   }
 
+  public function isActiveSetter($id){
+    if($id){
+      $isActive=($this->input->post("data") == "true") ? 1 : 0;
+
+      $this->firma_model->update(
+        array(
+          "id"  => $id
+        ),
+        array(
+          "isActive" => $isActive
+        )
+
+      );
+
+
+    }
+
+  }
 
 }

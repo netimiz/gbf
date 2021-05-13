@@ -69,7 +69,8 @@
             </td>
             <td>
               <label class="form-check form-switch">
-                <input class="form-check-input"
+                <input class="form-check-input isActive"
+                data-url="<?php echo base_url("firma/isActiveSetter/$item->id"); ?>"
                 type="checkbox"
                 <?php echo ($item->isActive) ? "checked" : ""; ?>
 

@@ -11,9 +11,9 @@ class Firma_model extends CI_Model{
     //Codeigniter : Write Less Do More
   }
 
-  public function get_all($where=array())
+  public function get_all($where=array(), $order ="id DESC")
   {
-    return $this->db->where($where)->get($this->tableName)->result();
+    return $this->db->where($where)->order_by($order)->get($this->tableName)->result();
   }
 
   public function get($where=array())
