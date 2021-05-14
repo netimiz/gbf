@@ -70,7 +70,7 @@
             </span>
           </a>
         </li>
-
+<!-- firma-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="false" >
             <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -90,6 +90,38 @@
                   Listele
                 </a>
                 <a class="dropdown-item" href="<?php echo base_url("firma/new_form"); ?>" >
+                  Ekle
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+<!-- tip-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="false" >
+            <span class="nav-link-icon d-md-none d-lg-inline-block">
+
+              <!-- Download SVG icon from http://tabler-icons.io/i/building-bank -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dna" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                 <circle transform="rotate(-45 12 12)" cx="12" cy="12" r="4"></circle>
+                 <path d="M9.172 20.485a4 4 0 1 0 -5.657 -5.657"></path>
+                 <path d="M14.828 3.515a4 4 0 1 0 5.657 5.657"></path>
+              </svg>
+
+            </span>
+            <span class="nav-link-title">
+              Tip/Tür
+            </span>
+          </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-menu-columns">
+              <div class="dropdown-menu-column">
+                <a class="dropdown-item" href="<?php echo base_url("tip"); ?>" >
+                  Listele
+                </a>
+                <a class="dropdown-item" href="<?php echo base_url("tip/new_form"); ?>" >
                   Ekle
                 </a>
 
