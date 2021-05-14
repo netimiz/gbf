@@ -7,83 +7,157 @@ kayıt tarihi ekleme -oto-
 firma ajax arama - id alma
 dosya yükleme
  -->
+ <form action="<?php echo base_url("dosyalar/save"); ?>" method="post">
+<div class="container-xl">
+  <div class="card card-lg" >
+    <div class="card-body ">
+
+      <div class="row lg-6">
+
+            <div class=" col-6 ">
 
 
-<div class="col-12">
-  <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">Dosya Ekleme</h3>
-    </div>
-test
-  </div>
-</div>
+              <!--Form elemanları-->
+
+                  <div class="mb-3">
+                    <label class="form-label">Dosya Adı
+                        <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+                          data-bs-content="<p>Dosya adı</p>">?
+                        </span>
+                    </label>
+
+                    <input type="text" class="form-control <?php if(isset($form_error)){ echo "is-invalid ";} ?>"
+                      name="title" placeholder="Dosya Adı">
+                      <?php if(isset($form_error)){  ?>
+                        <div class="invalid-feedback"><?php echo form_error("title"); ?></div>
+                      <?php } ?>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Ürün Kodu
+                        <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+                          data-bs-content="<p>Ürünün seri kodu. Ürüne özel no</p>">?
+                        </span>
+                    </label>
+
+                    <input type="text" class="form-control <?php if(isset($form_error)){ echo "is-invalid ";} ?>"
+                      name="urun_kodu" placeholder="Ürün Kodu">
+                      <?php if(isset($form_error)){  ?>
+                        <div class="invalid-feedback"><?php echo form_error("urun_kodu"); ?></div>
+                      <?php } ?>
+                  </div>
 
 
 
-<div class="col-sm-6 col-lg-6">
-  <div class="card">
-    <div class="card-body">
+                  <div class="mb-3">
+                    <label class="form-label">Form No
+                        <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+                          data-bs-content="<p>Gbf/Tds form no</p>">?
+                        </span>
+                    </label>
 
-        <!--Form elemanları-->
-        <div class="mb-3">
-          <label class="form-label">Ürün Adı</label>
-          <input type="text" class="form-control" name="adi" placeholder="Ürün Adı">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Ürün Kodu</label>
-          <input type="text" class="form-control" name="urun_kodu" placeholder="Ürün Kodu">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Cas No</label>
-          <input type="text" class="form-control" name="cas_no" placeholder="CAS #">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Form No</label>
-          <input type="text" class="form-control" name="form_no" placeholder="Form No">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Hazırlanma Tarihi</label>
-          <input type="text" class="form-control" name="hazirlanma_tarih" placeholder="Hazırlanma Tarihi">
-        </div>
+                    <input type="text" class="form-control <?php if(isset($form_error)){ echo "is-invalid ";} ?>"
+                      name="form_no" placeholder="Form No">
+                      <?php if(isset($form_error)){  ?>
+                        <div class="invalid-feedback"><?php echo form_error("form_no"); ?></div>
+                      <?php } ?>
+                  </div>
 
-    </div>
-  </div>
-</div>
-<div class="col-sm-6 col-lg-6">
-  <div class="card">
-    <div class="card-body">
+                  <div class="mb-3">
+                    <label class="form-label">Yayın Tarihi
+                        <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+                          data-bs-content="<p>Formun ilk yayın / hazırlanma tarihi</p>">?
+                        </span>
+                    </label>
 
-        <!--Form elemanları-->
-        <div class="mb-3">
-        <div class="form-label">Türü</div>
-        <select class="form-select" >
-          <option value="1">Bilgi Formu</option>
-          <option value="2">T. Data Sheet</option>
-        </select>
+                    <input type="text" class="form-control <?php if(isset($form_error)){ echo "is-invalid ";} ?>"
+                      name="yay_tarih" placeholder="Yayın Tarihi">
+                      <?php if(isset($form_error)){  ?>
+                        <div class="invalid-feedback"><?php echo form_error("yay_tarih"); ?></div>
+                      <?php } ?>
+                  </div>
+
+            </div>
+
+            <div class=" col-6 ">
+
+              <!--Form elemanları-->
+                  <div class="mb-3">
+                    <label class="form-label">Türü/Tipi
+                        <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+                          data-bs-content="<p>Dosya Türü nedir?</p>">?
+                        </span>
+                    </label>
+                    <select class="form-select form-control <?php if(isset($form_error)){ echo "is-invalid ";} ?>"
+                      name="tip_id">
+                      <option value="1">Bilgi Formu</option>
+                      <option value="2">T. Data Sheet</option>
+                    </select>
+                      <?php if(isset($form_error)){  ?>
+                        <div class="invalid-feedback"><?php echo form_error("tip_id"); ?></div>
+                      <?php } ?>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Firma
+                        <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+                          data-bs-content="<p>Üretici / ithalatcı firma</p>">?
+                        </span>
+                    </label>
+
+                    <input type="text" class="form-control <?php if(isset($form_error)){ echo "is-invalid ";} ?>"
+                      name="firma_id" placeholder="Firma">
+                      <?php if(isset($form_error)){  ?>
+                        <div class="invalid-feedback"><?php echo form_error("firma_id"); ?></div>
+                      <?php } ?>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Cas No
+                        <span class="form-help" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+                          data-bs-content="<p>Var ise CAS numarası</p>">?
+                        </span>
+                    </label>
+
+                    <input type="text" class="form-control"
+                      name="cas_no" placeholder="Cas No">
+
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label justify-content-end"><br></label>
+                    <div class="btn-list justify-content-end">
+                      <a href="<?php echo base_url("dosyalar"); ?>" type="button" class="btn" role="button" >
+                        <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                        <!-- SVG icon code -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                           <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                           <path d="M10 10l4 4m0 -4l-4 4"></path>
+                        </svg>
+                        İptal
+                      </a>
+                    <button type="submit" class="btn btn-primary" >
+                      <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                      <!-- SVG icon code -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                         <line x1="12" y1="5" x2="12" y2="19"></line>
+                         <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      Kaydı Oluştur
+                    </button>
+                  </div>
+
+                  </div>
+
+
+            </div>
+
       </div>
-        <div class="mb-3">
-          <label class="form-label">Firma</label>
-          <input class="form-control" list="datalistOptions" placeholder="Firmayı Ara..."/>
-          <datalist id="datalistOptions">
-            <option value="Shell"/>
-            <option value="Samsung"/>
-            <option value="Türk Petrol"/>
-            <option value="Prill"/>
-          </datalist>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Revizyon Tarihi</label>
-          <input type="text" class="form-control" name="revizyon_tarih" placeholder="Revizyon Tarihi">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Revizyon No</label>
-          <input type="text" class="form-control" name="revizyon_no" placeholder="Revizyon No">
-        </div>
-        <div class="mb-3">
-          <div class="form-label">Dosyayı Yükleyin</div>
-          <input type="file" class="form-control" />
-        </div>
-
     </div>
   </div>
 </div>
+
+
+</form>

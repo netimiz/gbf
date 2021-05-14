@@ -35,7 +35,6 @@
             <th class="w-1">ID. <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
             </th>
-
             <th>
               <div class="d-flex py-1 align-items-center">
                 <div class="flex-fill">
@@ -74,8 +73,9 @@
                 </div>
               </div>
             </th>
-            <th class="text-end">
 
+            <th class="text-end">
+              
 
             </th>
           </tr>
@@ -87,12 +87,11 @@
           <tr>
             <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select dosyalar"></td>
             <td><span class="text-muted"><?php echo $item->id; ?></span></td>
-
             <td>
               <div class="d-flex py-1 align-items-center">
                 <div class="flex-fill">
-                  <div class="font-weight-medium"><?php echo $item->title; ?></div>
-                  <div class="text-muted"><?php echo $item->firma_id; ?></div>
+                  <div class="font-weight-medium"><?php echo $item->adi; ?></div>
+                  <div class="text-muted"><?php echo $item->firma; ?></div>
                 </div>
               </div>
             </td>
@@ -105,7 +104,6 @@
                 </div>
               </div>
             </td>
-
             <td>
               <div class="d-flex py-1 align-items-center">
                 <div class="flex-fill">
@@ -114,22 +112,18 @@
                 </div>
               </div>
             </td>
-
             <td>
-              <?php echo $item->tip_id; ?>
+              <?php echo $item->tur; ?>
             </td>
-
             <td>
               <span class="badge bg-success me-1"></span>
               <span class="badge bg-warning me-1"></span>
               <span class="badge bg-secondary me-1"></span>
               <?php echo $item->status; ?>
             </td>
-
             <td>
               <label class="form-check form-switch">
-                <input class="form-check-input isActive"
-                data-url="<?php echo base_url("dosyalar/isActiveSetter/$item->id"); ?>"
+                <input class="form-check-input"
                 type="checkbox"
                 <?php echo ($item->isActive) ? "checked" : ""; ?>
 
@@ -140,12 +134,12 @@
               <span class="dropdown">
                 <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">İşlem</button>
                 <div class="dropdown-menu dropdown-menu-end">
-                  <a class="dropdown-item" href="<?php echo base_url("dosyalar/update_form/$item->id"); ?>">
-                    Güncelle
+                  <a class="dropdown-item" href="#">
+                    Action
                   </a>
-                  <button class="dropdown-item" data-href="<?php echo base_url("dosyalar/delete/$item->id"); ?>" data-bs-toggle="modal" data-bs-target="#silOnay" data-target="#silOnay">
-                    Sil
-                  </button>
+                  <a class="dropdown-item" href="#">
+                    Another action
+                  </a>
                 </div>
               </span>
             </td>

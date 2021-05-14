@@ -5,7 +5,7 @@
       <div class="col">
         <!-- Page pre-title -->
         <div class="page-pretitle">
-          Dosyalar
+          Dosya
         </div>
         <h2 class="page-title">
           Ekleme
