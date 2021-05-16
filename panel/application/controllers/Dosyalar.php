@@ -55,6 +55,11 @@ class Dosyalar extends CI_Controller {
 
       // kurallar
       $this->form_validation->set_rules("title","Dosya Adı","required|trim");
+      $this->form_validation->set_rules("firma_id","Firma Adı","required|trim");
+      $this->form_validation->set_rules("urun_kodu","Ürün Kodu","required|trim");
+      $this->form_validation->set_rules("form_no","Form No","required|trim");
+      $this->form_validation->set_rules("yay_tarih","Yayın Tarihi","required|trim");
+      $this->form_validation->set_rules("tip_id","Ürün Tipi","required|trim");
 
       $this->form_validation->set_message(
           array(
@@ -70,8 +75,16 @@ class Dosyalar extends CI_Controller {
                 array(
                   "title" =>$this->input->post("title"),
                   "url" =>seoUrl($this->input->post("title")),
-                  //"createdAt" =>date("d-m-Y H:i:s"),
-                  "isActive" =>1
+                  "createdAt" =>date("Y-m-d H:i:s"),
+                  "isActive" =>1,
+                  "firma_id" =>$this->input->post("firma_id"),
+                  "urun_kodu" =>$this->input->post("urun_kodu"),
+                  "cas_no" =>$this->input->post("cas_no"),
+                  "yay_tarih" =>$this->input->post("yay_tarih"),
+                  "form_no" =>$this->input->post("form_no"),
+                  "tip_id" =>$this->input->post("tip_id"),
+                  "yukleyen" =>1,
+                  "status" =>1
                 )
           );
 
@@ -127,6 +140,11 @@ class Dosyalar extends CI_Controller {
 
       // kurallar
       $this->form_validation->set_rules("title","Dosya Adı","required|trim");
+      $this->form_validation->set_rules("firma_id","Firma Adı","required|trim");
+      $this->form_validation->set_rules("urun_kodu","Ürün Kodu","required|trim");
+      $this->form_validation->set_rules("form_no","Form No","required|trim");
+      $this->form_validation->set_rules("yay_tarih","Yayın Tarihi","required|trim");
+      $this->form_validation->set_rules("tip_id","Ürün Tipi","required|trim");
 
       $this->form_validation->set_message(
           array(
@@ -145,8 +163,18 @@ class Dosyalar extends CI_Controller {
                 ),
                 //neyi güncelle
                 array(
+
                   "title" =>$this->input->post("title"),
-                  "url" =>seoUrl($this->input->post("title"))
+                  "url" =>seoUrl($this->input->post("title")),
+                  "updateAt" =>date("Y-m-d H:i:s"),
+
+                  "firma_id" =>$this->input->post("firma_id"),
+                  "urun_kodu" =>$this->input->post("urun_kodu"),
+                  "cas_no" =>$this->input->post("cas_no"),
+                  "yay_tarih" =>$this->input->post("yay_tarih"),
+                  "form_no" =>$this->input->post("form_no"),
+                  "tip_id" =>$this->input->post("tip_id")
+
                 )
           );
 
@@ -221,5 +249,22 @@ class Dosyalar extends CI_Controller {
       }
 
     }
+
+    public function firma_ara(){
+
+      $term = $this->input->get("term");
+
+      if(!empty($term)){
+        $json = $this->dosyalar_model->search_firma($term);
+		}
+
+      /** tablodan verinin getirilmesi*/
+
+      echo json_encode($json);
+
+
+    }
+
+
 
   }

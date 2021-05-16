@@ -9,8 +9,10 @@
 <script src="<?php echo base_url("assets/ui_assets"); ?>/dist/js/toast.js"> </script>
 <script src="<?php echo base_url("assets/ui_assets"); ?>/dist/js/tooltip.js"> </script>
 <!-- Tabler Core -->
+
 <script src="<?php echo base_url("assets/ui_assets"); ?>/dist/js/tabler.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo base_url("assets"); ?>/jquery-3.6.0.min.js"></script>
+<script src="<?php echo base_url("assets"); ?>/select2/js/select2.min.js"></script>
 
 
 
@@ -33,7 +35,24 @@ $(".isActive").change(function(){
     });
   }
 })
+</script>
+
+<script type="text/javascript">
 
 
+$('.firmasearch').select2({
+  placeholder: '--- Firma Seçin ---',
+  ajax: {
+    url: 'http://localhost/gbf/panel/dosyalar/firma_ara',
+    dataType: 'json',
+    delay: 250,
+    processResults: function (data) {
+      return {
+        results: data
+      };
+    },
+    cache: true
+  }
+});
 
 </script>

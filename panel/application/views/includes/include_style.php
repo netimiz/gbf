@@ -4,3 +4,4 @@
 <link href="<?php echo base_url("assets/ui_assets"); ?>/dist/css/tabler-payments.min.css" rel="stylesheet"/>
 <link href="<?php echo base_url("assets/ui_assets"); ?>/dist/css/tabler-vendors.min.css" rel="stylesheet"/>
 <link href="<?php echo base_url("assets/ui_assets"); ?>/dist/css/demo.min.css" rel="stylesheet"/>
+<link href="<?php echo base_url("assets"); ?>/select2/css/select2.css" rel="stylesheet"/>

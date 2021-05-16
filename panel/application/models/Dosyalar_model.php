@@ -32,4 +32,13 @@ class Dosyalar_model extends CI_Model{
   public function delete($where=array()){
     return $this->db->where($where)->delete($this->tableName);
   }
+
+  public function search_firma($q){
+    //
+
+
+    return $this->db->select('id, title as text')->like("title", $q)->limit(10)->get("firmalar")->result_array();
+
+  }
+
 }
