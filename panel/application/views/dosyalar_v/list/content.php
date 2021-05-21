@@ -92,7 +92,7 @@
               <div class="d-flex py-1 align-items-center">
                 <div class="flex-fill">
                   <div class="font-weight-medium"><?php echo $item->title; ?></div>
-                  <div class="text-muted"><?php echo $item->firma_id; ?></div>
+                  <div class="text-muted"><?php echo $item->firma_id; ?> - <?php echo $item->firma_title; ?></div>
                 </div>
               </div>
             </td>
@@ -116,7 +116,7 @@
             </td>
 
             <td>
-              <?php echo $item->tip_id; ?>
+              <?php echo $item->tip_title; ?>
             </td>
 
             <td>

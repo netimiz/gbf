@@ -15,6 +15,7 @@ class Dosyalar extends CI_Controller {
 		$this->viewFolder="dosyalar_v";
     $this->load->model("dosyalar_model");
 
+
 	}
 
 
@@ -23,15 +24,21 @@ class Dosyalar extends CI_Controller {
 
 
       /** tablodan verilerin getirilmesi*/
-      $items = $this->dosyalar_model->get_all(
+      $items = $this->dosyalar_model->get_AllWithAllTable(
         array(),
         "id DESC"
       );
+
+      // firma bilgileri
+
+
 
       /** viewe gönderilecek dataların set edilmesi */
       $viewData->viewFolder =$this->viewFolder;
       $viewData->subViewFolder= "list";
       $viewData->items=$items;
+
+      //$viewData->firma=$firmalar; // firma bilgileri için
 
 
 
@@ -121,16 +128,19 @@ class Dosyalar extends CI_Controller {
       $viewData = new stdClass();
 
       /** tablodan verinin getirilmesi*/
-      $item =  $this->dosyalar_model->get(
+      $item =  $this->dosyalar_model->get_WithAllTable(
         array(
-          "id"=>$id,
+          'dosyalar.id'=>$id,
         )
       );
+
+
 
       /** viewe gönderilecek dataların set edilmesi */
       $viewData->viewFolder =$this->viewFolder;
       $viewData->subViewFolder= "update";
       $viewData->item=$item;
+
 
       $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
     }

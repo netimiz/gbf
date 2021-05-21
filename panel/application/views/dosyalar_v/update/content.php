@@ -103,7 +103,8 @@
                       </label>
 
                       <select  class="firmasearch form-control <?php if(isset($form_error)){ echo "is-invalid ";} ?>"
-                        name="firma_id" value="<?php echo $item->firma_id; ?>" >
+                        name="firma_id" value="<?php //echo $item->firma_id; ?>" >
+                         <option value="<?php echo $item->firma_id; ?>" selected="selected"><?php echo $item->firma_title; ?></option>
                       </select>
                         <?php if(isset($form_error)){  ?>
                           <div class="invalid-feedback"><?php echo form_error("firma_id"); ?></div>

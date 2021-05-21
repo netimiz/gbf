@@ -43,7 +43,7 @@ $(".isActive").change(function(){
 $('.firmasearch').select2({
   placeholder: '--- Firma Seçin ---',
   ajax: {
-    url: 'http://localhost/gbf/panel/dosyalar/firma_ara',
+    url: '<?php echo base_url("dosyalar/firma_ara"); ?>',
     dataType: 'json',
     delay: 250,
     processResults: function (data) {
